@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
+import Button from 'react-bootstrap/Button';
 export default function Home() {
   return (
     <div >
@@ -13,7 +13,6 @@ export default function Home() {
 
       <main >
         <h1>Hello</h1>
-         
        
       </main>
 

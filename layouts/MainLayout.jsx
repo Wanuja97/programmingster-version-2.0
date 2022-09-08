@@ -1,11 +1,11 @@
 import React from 'react'
 import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import TopNavbar from '../components/TopNavbar'
 
 export default function MainLayout({children}) {
   return (
     <>
-        <Navbar/>
+        <TopNavbar/>
         <main>
             {children}
         </main>
