@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-
+import Script from 'next/script'
 // import 'bootstrap/dist/js/bootstrap.js';
 export default function Document() {
   return (
@@ -13,7 +13,7 @@ export default function Document() {
           rel="stylesheet"
         />
         {/* ion-icon */}
-        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+        <Script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></Script>
       </Head>
       <body>
         <Main />
