@@ -4,19 +4,18 @@ import HomeImage from '../public/homeimage-min.png'
 import Styles from "../styles/HomePage.module.scss";
 import Button from "react-bootstrap/Button";
 export default function Home() {
-  const n = 8;
   return (
     <div>
       <Head>
         <title>Programmingster</title>
         <meta
           name="description"
-          content="Welcome to programmingster.Sharing the knowledge is the best thing to learn"
+          content="Welcome to programmingster.Sharing knowledge is the best thing to learn"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={Styles.main}>
+      <main className={`${Styles.main} commonpagestyles`}>
         <div className={Styles.uppercontent}>
         <div className={`${Styles.content}  animate__animated animate__zoomIn `}>
           <p className={`${Styles.welcome} gradientcolor`}>Welcome to Programmingster.</p>
