@@ -41,7 +41,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className={Styles.footercontact}>
-            <h6>Connect With Me</h6>
+            <p>Connect With Me</p>
             <ul>
                 <li><a href="https://www.linkedin.com/in/wanujaranasinghe/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
                 <li><a href="https://github.com/Wanuja97"><ion-icon name="logo-github"></ion-icon></a></li>
