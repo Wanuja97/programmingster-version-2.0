@@ -25,8 +25,8 @@ export default function TopNavbar() {
             />
           </div>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className={Styles.navitem}>
+          <Navbar.Collapse id="responsive-navbar-nav" className={Styles.navitemscontainer}>
+            <Nav >
               <Nav.Item className={Styles.navitem}>
                 <Link href="/">
                   <a>Home </a>

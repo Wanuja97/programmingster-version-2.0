@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import HomeImage from '../public/homeimage.png'
 import Styles from "../styles/HomePage.module.scss";
 import Button from "react-bootstrap/Button";
 export default function Home() {
@@ -21,12 +22,20 @@ export default function Home() {
           <p className={`${Styles.welcome} gradientcolor`}>Welcome to Programmingster.</p>
           <h1>Sharing the Knowledge is the best thing to learn.</h1>
           <div className={Styles.btncontainer}>
-            <a href="#posts"><Button className={Styles.startbtn}>Get Started</Button></a>
+            <a href="#categories"><Button className={Styles.startbtn}>Get Started</Button></a>
           </div>
+        </div>
+        <div className={Styles.homeimage}>
+          <Image
+          src={HomeImage}
+          alt="Home Image"
+          width={933}
+          height={700}
+          />
         </div>
         </div>
 
-        <div className={Styles.posts} id="posts">
+        <div className={Styles.posts} id="categories">
           <h2>Hello</h2>
         </div>
       </main>

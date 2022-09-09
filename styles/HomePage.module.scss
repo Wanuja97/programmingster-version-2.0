@@ -5,45 +5,46 @@
     font-family: 'Ubuntu', sans-serif;
     
     .uppercontent{
-    min-height: 90vh;
+    display: flex;
+    height: 92vh;
     width:100%;
-    background-color: #092031 !important;
-    background: url('/a.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; 
+    background: linear-gradient(104.06deg, #0E314A 0.3%, #071B29 23.15%, #092031 49.11%, #092031 73%, #0E334F 100%);
+
     }
-    .content{
-        min-height: 110vh;
-        display: flex;
-        flex-direction: column;
-        // justify-content: center;
-        text-align: left;
-        align-items: left;
-        padding: 10rem 5rem;
-        height: 100%;
-        width:45%;
-    }
+   
     h1{
         color: #fff;
         font-weight: 900;
         font-size: 4rem;
     }
+    .homeimage{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
   }
 .welcome{
     font-family: 'Ubuntu', sans-serif;
     color: #2EE48D;
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
-  /* .card:hover,
-  .card:focus,
-  .card:active {
-    color: #0070f3;
-    border-color: #0070f3;
-  } */
+  .content{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    padding-top: 6rem ;
+    padding-left: 8rem;
+    height: 100%;
+    width:50%;
+
+    
+}
 .btncontainer{
-    // width: 850px;
+    margin: 10px 0px;
 }
 .startbtn{
     border: none;
@@ -58,6 +59,33 @@
     cursor: pointer;
 }
 .posts{
-    
+
     color: #000;
+}
+
+
+@media screen and (max-width: 566px)  {
+    .main{
+        h1{
+            font-size: 3rem;
+        }
+    }
+    .uppercontent{
+        max-height: 92vh;
+        
+        flex-direction: column;
+    }
+    .content{
+        width: 100% ;
+        padding: 20px ;
+        flex-wrap: wrap;
+        text-align: center ;
+       
+    }
+    .welcome{
+        font-family: 'Ubuntu', sans-serif;
+        color: #2EE48D;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
 }
