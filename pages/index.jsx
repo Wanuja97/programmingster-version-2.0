@@ -12,7 +12,7 @@ export default function Home() {
           name="description"
           content="Welcome to programmingster.Sharing knowledge is the best thing to learn"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <
       </Head>
 
       <main className={`${Styles.main} commonpagestyles`}>
