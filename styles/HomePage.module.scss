@@ -6,7 +6,7 @@
     
     .uppercontent{
     display: flex;
-    height: 92vh;
+    height: 100vh;
     width:100%;
     background: linear-gradient(104.06deg, #0E314A 0.3%, #071B29 23.15%, #092031 49.11%, #092031 73%, #0E334F 100%);
 
@@ -22,6 +22,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 20px;
     }
   }
 .welcome{
@@ -36,7 +37,7 @@
     flex-direction: column;
     text-align: left;
     align-items: left;
-    padding-top: 6rem ;
+    padding-top: 8rem ;
     padding-left: 8rem;
     height: 100%;
     width:50%;
@@ -71,8 +72,8 @@
         }
     }
     .uppercontent{
-        max-height: 92vh;
-        
+        // max-height: 92vh;
+        padding-top: 6rem;
         flex-direction: column;
     }
     .content{

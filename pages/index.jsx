@@ -20,7 +20,7 @@ export default function Home() {
         <div className={Styles.uppercontent}>
         <div className={`${Styles.content}  animate__animated animate__zoomIn `}>
           <p className={`${Styles.welcome} gradientcolor`}>Welcome to Programmingster.</p>
-          <h1>Sharing the Knowledge is the best thing to learn.</h1>
+          <h1>Sharing knowledge is the best thing to learn.</h1>
           <div className={Styles.btncontainer}>
             <a href="#categories"><Button className={Styles.startbtn}>Get Started</Button></a>
           </div>

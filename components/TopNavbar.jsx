@@ -17,6 +17,9 @@ export default function TopNavbar() {
         fixed="top"
       >
         <Container >
+        
+        <Link href="/">
+          <a>
           <div className="logocontainer">
             <Image
               src="/programmingster-nav-logo.png"
@@ -25,6 +28,9 @@ export default function TopNavbar() {
               height="51"
             />
           </div>
+          </a>
+        </Link>
+          
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className={Styles.navitemscontainer}>
             <Nav >
