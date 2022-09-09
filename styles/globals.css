@@ -15,5 +15,10 @@ a {
   box-sizing: border-box;
   margin: 0;
 }
-
+.gradientcolor{
+  
+  background: linear-gradient(90deg, #2EE48D 0%, #04D2FF 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 

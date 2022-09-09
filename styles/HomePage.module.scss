@@ -1,0 +1,63 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    font-family: 'Ubuntu', sans-serif;
+    
+    .uppercontent{
+    min-height: 90vh;
+    width:100%;
+    background-color: #092031 !important;
+    background: url('/imageedit_2.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    }
+    .content{
+        min-height: 110vh;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        text-align: left;
+        align-items: left;
+        padding: 10rem 5rem;
+        height: 100%;
+        width:45%;
+    }
+    h1{
+        color: #fff;
+        font-weight: 900;
+        font-size: 4rem;
+    }
+  }
+.welcome{
+    font-family: 'Ubuntu', sans-serif;
+    color: #2EE48D;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+  /* .card:hover,
+  .card:focus,
+  .card:active {
+    color: #0070f3;
+    border-color: #0070f3;
+  } */
+.btncontainer{
+    // width: 850px;
+}
+.startbtn{
+    border: none;
+    outline: none;
+    background-color: #2EE48D;
+    padding: 0.8rem;
+    font-size: 18px;
+}
+.startbtn:hover{
+    background-color: #6298E9 !important;
+    color: #fff;
+    cursor: pointer;
+}
+.posts{
+    
+    color: #000;
+}

@@ -43,8 +43,8 @@ export default function TopNavbar() {
                 </Link>
               </Nav.Item>
               <Nav.Item className={Styles.navitem}>
-                <Link href="/privacypolicy">
-                  <a>Privacy Policy </a>
+                <Link href="/privacypolicy" >
+                  <a >Privacy Policy </a>
                 </Link>
               </Nav.Item>
             </Nav>
