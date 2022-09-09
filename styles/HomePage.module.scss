@@ -1,4 +1,5 @@
 .main {
+    margin-top: 8vh;
     display: flex;
     flex-direction: column;
     width:100%;
@@ -22,7 +23,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 20px;
+        margin-top: 20px;
     }
   }
 .welcome{
@@ -37,7 +38,7 @@
     flex-direction: column;
     text-align: left;
     align-items: left;
-    padding-top: 8rem ;
+    padding-top: 6rem ;
     padding-left: 8rem;
     height: 100%;
     width:50%;
@@ -73,7 +74,7 @@
     }
     .uppercontent{
         // max-height: 92vh;
-        padding-top: 6rem;
+        padding-top: 2rem;
         flex-direction: column;
     }
     .content{
