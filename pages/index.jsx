@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import HomeImage from '../public/homeimage.png'
+import HomeImage from '../public/homeimage-min.png'
 import Styles from "../styles/HomePage.module.scss";
 import Button from "react-bootstrap/Button";
 export default function Home() {
