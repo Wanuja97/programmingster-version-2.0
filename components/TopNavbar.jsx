@@ -14,6 +14,7 @@ export default function TopNavbar() {
         expand="lg"
         className={Styles.navcontainer}
         variant="dark"
+        fixed="top"
       >
         <Container >
           <div className="logocontainer">
