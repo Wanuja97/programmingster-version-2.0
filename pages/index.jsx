@@ -28,6 +28,7 @@ export default function Home() {
           <Image
           src={HomeImage}
           alt="Home Image"
+          priority={true}
           width={933}
           height={700}
           />
