@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.1",
     "next": "12.2.5",
