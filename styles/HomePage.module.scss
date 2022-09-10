@@ -33,7 +33,7 @@
     font-weight: 600;
 }
   .content{
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -65,8 +65,35 @@
     color: #000;
 }
 
+@media screen  and (min-width:577px) and (max-width:992px){
+    .main{
+        h1{
+            font-size: 3rem;
+        }
+    }
+    .uppercontent{
+        // max-height: 92vh;
+        width:100%;
+        max-width: 100%;
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .content{
+        width: 100% ;
+        max-width: 100% ;
+        padding: 20px ;
+        flex-wrap: wrap;
+        text-align: center ;
+        flex-direction: column !important;
+       overflow: visible;
+    }
+    
+}
 
-@media screen and (max-width: 566px)  {
+
+@media screen and (max-width: 576px)  {
     .main{
         h1{
             font-size: 3rem;
