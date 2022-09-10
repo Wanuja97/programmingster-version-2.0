@@ -4,7 +4,7 @@ import Styles from "../styles/contact.module.scss";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import emailjs from "@emailjs/browser";
-export default function contact() {
+export default function Contact() {
   const form = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
