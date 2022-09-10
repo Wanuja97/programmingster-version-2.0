@@ -1,4 +1,4 @@
-.privacypolicycontainer{
+.contactcontainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,6 +12,7 @@
 .heading{
     width: 80%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     align-items: center;
@@ -23,10 +24,14 @@
         font-weight: 900;
         font-family: 'Ubuntu';
     }
+    .emailandtel{
+        font-weight: normal;
+    }
 }
 .content{
-    width: 80%;
+    width: 45%;
     text-align: justify;
+    padding-bottom: 30px;
     h2{
         color: cornflowerblue;
         
@@ -36,12 +41,28 @@
 @media screen and (max-width: 576px) {
     .heading{
         width: 90%;
-
         h1{
             font-size: 2.5rem;
         }
     }
     .content{
         width: 90%;
+    }
+}
+.submitbtn{
+    border: none;
+    outline: none;
+    background-color: #2EE48D;
+    padding: 0.8rem;
+    font-size: 18px;
+}
+.submitbtn:hover{
+    background-color: #6298E9 !important;
+    color: #fff;
+    cursor: pointer;
+}
+@media screen and (min-width:577px) and (max-width: 992px) {
+    .content{
+        width: 70%;
     }
 }
