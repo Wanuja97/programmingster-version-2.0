@@ -1,0 +1,38 @@
+.privacypolicycontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #051622;
+    padding-top: 40px;
+    color: #fff;
+    font-family: 'Ubuntu';
+    margin: 0;
+}
+.heading{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-weight: 900;
+}
+.content{
+    width: 80%;
+    text-align: justify;
+    h2{
+        color: cornflowerblue;
+        
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .heading{
+        width: 90%;
+    }
+    .content{
+        width: 90%;
+    }
+}
