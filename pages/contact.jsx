@@ -4,6 +4,8 @@ import Styles from "../styles/contact.module.scss";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Contact() {
   const form = useRef();
   const [name, setName] = useState("");
@@ -26,9 +28,27 @@ export default function Contact() {
           setEmail("");
           setMessage("");
           setSubject("");
+          toast.success('Message Sent Successfully!!', {
+            position: "bottom-right",
+            autoClose: false,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
         },
         (error) => {
           console.log(error.text);
+          toast('Internal Server Error! Please Try Again', {
+            position: "bottom-right",
+            autoClose: false,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
         }
       );
   };
@@ -43,6 +63,7 @@ export default function Contact() {
       </Head>
       <main className="commonpagestyles">
         <div className={Styles.contactcontainer}>
+        <ToastContainer />
           <div className={Styles.heading}>
             <h1 className="gradientcolor">Get In Touch</h1>
             <p>Have any questions? I would love to hear from you..</p>
