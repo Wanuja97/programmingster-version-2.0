@@ -129,6 +129,35 @@
             }
         }
     }
+    .commentsection{
+        width:80%;
+        height: auto;
+    }
+    .recommendpost{
+        width:70%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        .headingr{
+            font-weight: 600;
+            font-size: 24px;
+        }
+        .date{
+            color: #777;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .topic{
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .rpostcontent{
+            display: flex;
+            flex-direction: row;
+        }
+        .rpostcontentbody{
+            margin-left: 30px;
+        }
+    }
 
 }
 
@@ -171,6 +200,10 @@
                 padding: 20px 0px;
             }
             
+        }
+        .commentsection{
+            width:100%;
+            height: auto;
         }
         .postcontent{
                 padding: 0px;
