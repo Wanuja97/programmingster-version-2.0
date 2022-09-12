@@ -18,7 +18,7 @@ export default function HomeCategoryTabs() {
           
             <div className={Styles.cardgroup}>
             <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" />
+              <Card.Img variant="top" src="/image.jpg" alt="test"/>
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
@@ -32,7 +32,7 @@ export default function HomeCategoryTabs() {
               </Card.Footer>
             </Card>
             <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" />
+              <Card.Img variant="top" src="/image.jpg" alt="test"/>
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
@@ -45,7 +45,7 @@ export default function HomeCategoryTabs() {
               </Card.Footer>
             </Card>
             <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" />
+              <Card.Img variant="top" src="/image.jpg" alt="test"/>
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
@@ -59,7 +59,7 @@ export default function HomeCategoryTabs() {
               </Card.Footer>
             </Card>
             <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" />
+              <Card.Img variant="top" src="/image.jpg" alt="test"/>
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
@@ -72,7 +72,7 @@ export default function HomeCategoryTabs() {
               </Card.Footer>
             </Card>
             <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" />
+              <Card.Img variant="top" src="/image.jpg" alt="test"/>
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
@@ -90,7 +90,7 @@ export default function HomeCategoryTabs() {
         <Tab eventKey="htmlcss" title="HTML &amp; CSS">
         <div className={Styles.cardgroup}>
         <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" />
+              <Card.Img variant="top" src="/image.jpg" alt="test"/>
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
