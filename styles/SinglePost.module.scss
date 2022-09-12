@@ -123,11 +123,13 @@
     }
     .recommendpost{
         width:70%;
+        height: auto;
         margin-top: 30px;
         margin-bottom: 30px;
         .headingr{
             font-weight: 600;
             font-size: 24px;
+           
         }
         .date{
             color: #777;
@@ -137,13 +139,30 @@
         .topic{
             font-size: 18px;
             font-weight: 600;
+           
+            a{
+                text-decoration: none;
+                
+            }
         }
         .rpostcontent{
             display: flex;
             flex-direction: row;
+            
+            .rpostimage{
+                position: relative;
+                width: 40%;
+                height: auto;
+                margin-right: 20px;
+                
+            }
         }
         .rpostcontentbody{
-            margin-left: 30px;
+            text-align: justify;
+            // margin-left: 30px;
+            a{
+                text-decoration: none;
+            }
         }
     }
 
@@ -185,7 +204,13 @@
                 width: 100% ;
                 overflow-y: hidden;
                 height: auto;
-                padding: 20px 0px;
+                padding: 5px 0px 20px 0px;
+                font-size: 14px;
+                .subheading{
+                    margin-top: 5px;
+                    color: #777;
+                    font-weight: 600;
+                }
             }
             
         }
@@ -214,6 +239,32 @@
 
                 .headingr{
                     font-size: 18px;
+                }
+                .date{
+                    color: #777;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+                .topic{
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                .rpostcontent{
+                    
+                    flex-direction: column;
+                    width: 100%;
+
+                    .rpostimage{
+                        
+                        width: 100%;
+                        height: 18vh;
+                        margin: 10px 0px;
+                        
+                    }
+                }
+                .rpostcontentbody{
+                    margin-left: 0px;
+                    font-size: 12px;
                 }
             }
     }

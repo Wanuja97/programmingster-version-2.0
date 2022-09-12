@@ -44,12 +44,8 @@ export default function SinglePost() {
               <div className={Styles.postmetadata}>
                 <div>
                   <p className={Styles.subheading}>OVERVIEW</p>
-                  <p className={Styles.subcontent}>
-                   This is OVERVIEW
-                  </p>
-                  <p className={Styles.subcontent}>
-                    Overview
-                  </p>
+                  <p className={Styles.subcontent}>This is OVERVIEW</p>
+                  <p className={Styles.subcontent}>Overview</p>
                   <div className={Styles.subcontentdivider}></div>
                 </div>
 
@@ -95,14 +91,12 @@ export default function SinglePost() {
                 </div>
               </div>
             </div>
-            <div className={Styles.postcontent}>
-              Post body
-            </div>
+            <div className={Styles.postcontent}>Post body</div>
             <div className={Styles.aboutauthor}>
-              <AuthorDetails/>
+              <AuthorDetails />
             </div>
             <div className={Styles.commentsection}>
-              <DisqusCommentBox/>
+              <DisqusCommentBox />
             </div>
             <div className={Styles.recommendpost}>
               <p className={Styles.headingr}>Related Articles</p>
@@ -115,22 +109,25 @@ export default function SinglePost() {
                   <div>
                     <span className={Styles.topic}>
                       <Link href="/">
-                        <a>Azure</a>
+                        <a>Manage Azure Blob Storage Using NestJS</a>
                       </Link>
                     </span>
                   </div>
                   <div className={Styles.rpostcontent}>
-                    <div>
+                    <div className={Styles.rpostimage}>
                       <Image
                         src="/image.jpg"
-                        width={150}
-                        height={100}
+                        layout="fill"
                         priority={true}
-                        alt="Wanuja Ranasinghe - Author &amp; Owner of Programmingster"
+                        objectFit="contain"
+                        alt="recommended-post"
                       />
                     </div>
                     <div className={Styles.rpostcontentbody}>
-                      Post description
+                       is a developer, lifelong learner, and a passionate person
+                      who is always willing to learn and explore technologiess.
+                      He currently reading B.Sc.(Hons.) degree in Information
+                      Technology at university of Moratuwa, Sri Lanka.
                       <div>
                         <a href="">Read More</a>
                       </div>
