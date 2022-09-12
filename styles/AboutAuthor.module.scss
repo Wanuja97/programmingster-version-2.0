@@ -13,6 +13,9 @@
     }
 }
 @media screen and (max-width: 576px) {
+    .headingauthor{
+        font-size: 18px;
+    }
     .authordetails{
         flex-direction: column;
         align-items: center;
