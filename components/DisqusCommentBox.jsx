@@ -4,7 +4,7 @@ export default function DisqusCommentBox() {
   return (
     <div>
       <div id="disqus_thread"></div>
-<Script>
+<Script id="disqus-script">
    {`
    var disqus_config = function () {
     this.page.url = document.location.href;  
