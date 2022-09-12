@@ -4,6 +4,11 @@
 }
 .authordetails{
     display: flex;
+    // .authorimage{
+    //     position: relative;
+    //     width: 250px;
+    //     height: 150px;
+    // }
     a{
         text-decoration: none;
     }
@@ -17,13 +22,17 @@
         font-size: 18px;
     }
     .authordetails{
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 20px;
+        // flex-direction: column;
+        align-items: left;
+        
         p{
             margin: 0px;
             text-align: justify;
-            font-size: 14px;
+            font-size: 12px;
+        }
+        .authorimage{
+            min-width: 75px;
+            margin-right: 10px;
         }
     }
 }

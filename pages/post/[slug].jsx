@@ -105,7 +105,7 @@ export default function SinglePost() {
               <DisqusCommentBox/>
             </div>
             <div className={Styles.recommendpost}>
-              <p className={Styles.headingr}>Related Artcles</p>
+              <p className={Styles.headingr}>Related Articles</p>
               <Card>
                 <Card.Body>
                   <div>
