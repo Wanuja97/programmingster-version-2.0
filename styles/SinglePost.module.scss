@@ -114,20 +114,7 @@
         // align-items: center;
         // justify-content: center;
         padding: 0px 60px 60px 60px;
-        .headingauthor{
-            font-weight: 600;
-            font-size: 24px;
-        }
-        .authordetails{
-            display: flex;
-            a{
-                text-decoration: none;
-            }
-            
-            p{
-                margin: 20px;
-            }
-        }
+        
     }
     .commentsection{
         width:80%;
@@ -209,6 +196,15 @@
                 padding: 0px;
                 
                 // font-size: 16px;
+            }
+            .aboutauthor{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                // align-items: center;
+                // justify-content: center;
+                padding: 0px;
+                
             }
     }
 }

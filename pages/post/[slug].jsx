@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import Styles from "../../styles/SinglePost.module.scss";
 import DisqusCommentBox from "../../components/DisqusCommentBox";
 import { useRouter } from "next/router";
+import AuthorDetails from "../../components/AuthorDetails";
 export default function SinglePost() {
   const router = useRouter();
   const { slug } = router.query;
@@ -98,30 +99,7 @@ export default function SinglePost() {
               Post body
             </div>
             <div className={Styles.aboutauthor}>
-              <p className={Styles.headingauthor}>About the Author</p>
-              <div className={Styles.authordetails}>
-                <div>
-                  <Image
-                    src="/author.png"
-                    width={250}
-                    height={250}
-                    priority={true}
-                    alt="Wanuja Ranasinghe - Author &amp; Owner of Programmingster"
-                  />
-                </div>
-
-                <p>
-                  <b>
-                    <a href="https://www.wanujaranasinghe.me/">
-                      Wanuja Ranasinghe
-                    </a>
-                  </b>{" "}
-                  is a developer, lifelong learner, and a passionate person who
-                  is always willing to learn and explore technologiess. He
-                  currently reading B.Sc.(Hons.) degree in Information
-                  Technology at university of Moratuwa, Sri Lanka.
-                </p>
-              </div>
+              <AuthorDetails/>
             </div>
             <div className={Styles.commentsection}>
               <DisqusCommentBox/>

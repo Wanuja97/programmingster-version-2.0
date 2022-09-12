@@ -11,8 +11,8 @@ export default function Footer() {
           <Image
             src="/programmingster-logo.png"
             alt="programmingster logo"
-            width="360"
-            height="120"
+            width="384"
+            height="126"
           />
         </div>
         <div className={Styles.footernavigation}>
