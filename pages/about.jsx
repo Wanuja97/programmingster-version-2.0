@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-export default function about() {
+export default function About() {
   return (
     <div>
         <Head>

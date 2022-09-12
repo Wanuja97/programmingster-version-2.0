@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Styles from "../styles/privacypolicy.module.scss";
-export default function privacypolicy() {
+export default function PrivacyPolicy() {
   return (
     <div>
       <Head>

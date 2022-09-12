@@ -1,0 +1,181 @@
+.singlepostcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding-top: 40px;
+    color: #000;
+    font-family: 'Ubuntu';
+    margin: 0;
+}
+.heading{
+    width: 90%;
+    text-align: left;
+    padding: 20px;
+    font-weight: 900;
+    h1{
+        font-size: 2.5rem;
+        font-weight: 900;
+        font-family: 'Ubuntu';
+ 
+    }
+    .headingauthorname{
+        color: #6298E9;
+    }
+    .headingdivider{
+        width: 100%;
+        height: 4px;
+        background:linear-gradient(270deg, #6298E9 7.81%, #2EE48D 100%) left bottom #777 no-repeat; 
+        background-size:100% 8px ;
+        margin: 0;
+    }
+
+}
+.content{
+    width: 90%;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        color: #2EE48D;
+        
+    }
+
+    .uppercontent{
+        display: flex;
+        flex-direction: row;
+
+        .coverimage{
+            position: relative;
+            width:50vw;
+            height: 60vh;
+            max-height: 60vh !important;
+            overflow: hidden;
+            
+        }
+
+        .postmetadata{
+            // background: #2EE48D;
+            width: calc(100% - 50vw);
+            padding: 0px 20px;
+            height: 60vh;
+            overflow-y: scroll;
+            .subheading{
+                margin-top: 10px;
+                color: #777;
+                font-weight: 600;
+            }
+            .subcontent{
+                font-size: 14px;
+                text-align: justify;
+                color: #555;
+            }
+            
+            .subcontentlist{
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0px 0px 10px 0px;
+                font-size: 14px;
+                
+                li{
+                    display: inline-block;
+                    margin-right: 25px;
+                }
+                
+            }
+            .subcontentdivider{
+                width: 100%;
+                height: 2px;
+                background:linear-gradient(270deg, #6298E9 7.81%, #2EE48D 100%) left bottom #777 no-repeat; 
+                background-size:100% 8px ;
+                margin: 0;
+            }
+            a{
+                text-decoration: none;
+                font-size: 14px;
+            }
+            
+        }
+    }
+    .postcontent{
+        padding: 60px;
+        text-align: justify;
+        color: #555;
+        // font-size: 16px;
+    }
+    .aboutauthor{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        // justify-content: center;
+        padding: 0px 60px 60px 60px;
+        .headingauthor{
+            font-weight: 600;
+            font-size: 24px;
+        }
+        .authordetails{
+            display: flex;
+            a{
+                text-decoration: none;
+            }
+            
+            p{
+                margin: 20px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .singlepostcontainer{
+        padding-top: 10px;
+    }
+    .heading{
+        width: 98%;
+        padding: 10px;
+        text-align: justify;
+        h1{
+            font-size: 1.6rem;
+        }
+    }
+    .content{
+        width: 98%;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        h2{
+            color: #2EE48D;
+            
+        }
+    
+        .uppercontent{
+            display: flex;
+            flex-direction: column;
+    
+            .coverimage{
+                width:100%;
+                height: 30vh;
+                max-height: 55vh !important;
+            }
+            .postmetadata{
+                // background: #2EE48D;
+                width: 100% ;
+                overflow-y: hidden;
+                height: auto;
+                padding: 20px 0px;
+            }
+            
+        }
+        .postcontent{
+                padding: 0px;
+                
+                // font-size: 16px;
+            }
+    }
+}
