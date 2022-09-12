@@ -1,0 +1,146 @@
+.main {
+    
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    font-family: 'Ubuntu', sans-serif;
+    
+    .uppercontent{
+    display: flex;
+    height: 100vh;
+    width:100%;
+    background: linear-gradient(104.06deg, #0E314A 0.3%, #071B29 23.15%, #092031 49.11%, #092031 73%, #0E334F 100%);
+
+    }
+   
+    h1{
+        color: #fff;
+        font-weight: 900;
+        font-size: 4rem;
+    }
+    .homeimage{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+  }
+.welcome{
+    font-family: 'Ubuntu', sans-serif;
+    color: #2EE48D;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+  .content{
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    padding-top: 6rem ;
+    padding-left: 8rem;
+    height: 100%;
+    width:50%;
+
+    
+}
+.btncontainer{
+    margin: 10px 0px;
+}
+.startbtn{
+    border: none;
+    outline: none;
+    background-color: #2EE48D;
+    padding: 0.8rem;
+    font-size: 18px;
+}
+.startbtn:hover{
+    background-color: #6298E9 !important;
+    color: #fff;
+    cursor: pointer;
+}
+.bottomcontent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.posts{
+    margin: 50px;
+    width: 75%;
+    color: #000;
+    // background-color: #2EE48D;
+}
+
+@media screen  and (min-width:577px) and (max-width:992px){
+    .main{
+        h1{
+            font-size: 3rem;
+        }
+    }
+    .uppercontent{
+        // max-height: 92vh;
+        width:100%;
+        max-width: 100%;
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .content{
+        width: 100% ;
+        max-width: 100% ;
+        padding: 20px ;
+        flex-wrap: wrap;
+        text-align: center ;
+        flex-direction: column !important;
+       overflow: visible;
+    }
+    .posts{
+        margin: 20px;
+        width: 90%;
+    }
+    
+}
+
+
+@media screen and (max-width: 576px)  {
+    .main{
+        h1{
+            font-size: 3rem;
+        }
+    }
+    .uppercontent{
+        // max-height: 92vh;
+        padding-top: 2rem;
+        flex-direction: column;
+    }
+    .content{
+        width: 100% ;
+        padding: 20px ;
+        flex-wrap: wrap;
+        text-align: center ;
+       
+    }
+    .welcome{
+        font-family: 'Ubuntu', sans-serif;
+        color: #2EE48D;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .homeimage{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: -70px;
+        // margin-top: 20px;
+    }
+    .posts{
+        margin: 20px 0px;
+        width: 100%;
+        color: #000;
+        // background-color: #2EE48D;
+    }
+}

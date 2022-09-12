@@ -1,0 +1,27 @@
+.navcontainer{
+    background-color: #092031 !important;
+    background:
+    linear-gradient(270deg, #6298E9 7.81%, #2EE48D 100%)
+    left 
+    bottom
+    #777    
+    no-repeat; 
+  background-size:100% 8px ;
+  
+  .navitemscontainer{
+    flex-grow: 0 ;
+  }
+}
+
+.navitem{
+    padding:5px 20px;
+    font-family: 'Ubuntu';
+    font-size: 18px;
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+}
+.navitem a:hover{
+    color: #2EE48D;
+}

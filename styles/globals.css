@@ -2,8 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Ubuntu',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,14 +13,33 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+.gradientcolor{
+  
+  background: linear-gradient(90deg, #2EE48D 0%, #04D2FF 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.commonpagestyles{
+  margin-top: 8vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* box-shadow: inset 0 0 5px #dddddd */
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(180deg, #6298E9 7.81%, #2EE48D 100%) left bottom #777 no-repeat; 
+  border-radius: 4px;
 }
