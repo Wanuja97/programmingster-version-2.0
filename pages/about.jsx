@@ -19,7 +19,7 @@ export default function About() {
             Welcome To Programmingster!!! <br /><br /> Programmingster is a Professional Blog Platform.
             The purpose of creating this website was my passion for programming and, sharing my knowledge about information technology with people who are interested in and searching for it all over the world. I hope you enjoy Programmingster as much as I enjoy offering them to you. <br />
             I will keep posting more important things on the Programmingster for all of you. Please give your support and love. <br />
-            <br /> Thanks For Visiting Programmingster. <br /><br />
+            <br /> Thanks for visiting Programmingster. <br /><br />
             <a href="https://www.wanujaranasinghe.me/">Wanuja Ranasinghe</a> <br />
             - Author of Programmingster
             </p>

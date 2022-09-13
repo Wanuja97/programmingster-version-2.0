@@ -7,9 +7,12 @@ import Styles from "../../styles/SinglePost.module.scss";
 import DisqusCommentBox from "../../components/DisqusCommentBox";
 import { useRouter } from "next/router";
 import AuthorDetails from "../../components/AuthorDetails";
-export default function SinglePost() {
+
+import client from '../../client'
+export default function SinglePost({post}) {
   const router = useRouter();
-  const { slug } = router.query;
+  // const { slug } = router.query;
+  // alert(JSON.stringify(post))
   return (
     <div>
       <Head>
@@ -22,7 +25,7 @@ export default function SinglePost() {
       <main className="commonpagestyles">
         <div className={Styles.singlepostcontainer}>
           <div className={Styles.heading}>
-            <h1>{slug}</h1>
+            <h1>{post?.slug?.current}</h1>
             <p>
               BY{" "}
               <span className={Styles.headingauthorname}>
@@ -41,7 +44,7 @@ export default function SinglePost() {
                 <Image
                   src="/image.jpg"
                   layout="fill"
-                  alt={slug}
+                  // alt={slug}
                   priority={true}
                 />
               </div>
@@ -145,4 +148,28 @@ export default function SinglePost() {
       </main>
     </div>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = await client.fetch(
+    `*[_type == "post" && defined(slug.current)][].slug.current`
+  )
+
+  return {
+    paths: paths.map((slug) => ({params: {slug}})),
+    fallback: true,
+  }
+}
+
+export async function getStaticProps(context) {
+  // It's important to default the slug so that it doesn't return "undefined"
+  const { slug = "" } = context.params
+  const post = await client.fetch(`
+    *[_type == "post" && slug.current == $slug][0]
+  `, { slug })
+  return {
+    props: {
+      post
+    }
+  }
 }
