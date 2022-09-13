@@ -2,7 +2,6 @@ import React,{useState} from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
-import CardGroup from "react-bootstrap/CardGroup";
 import Styles from "../styles/HomeCategoryTabs.module.scss";
 export default function HomeCategoryTabs() {
  const [key, setKey] = useState('all');
