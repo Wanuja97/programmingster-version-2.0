@@ -27,8 +27,12 @@ export default function SinglePost() {
               BY{" "}
               <span className={Styles.headingauthorname}>
                 WANUJA RANASINGHE
+              </span> <br />
+              <span className={Styles.postdate}>
+              Posted on 10 JUNE 2022
               </span>
             </p>
+            
             <div className={Styles.headingdivider}></div>
           </div>
           <div className={Styles.content}>
