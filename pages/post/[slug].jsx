@@ -10,7 +10,8 @@ import AuthorDetails from "../../components/AuthorDetails";
 
 import client from "../../client";
 import groq from "groq";
-import imageUrlBuilder from '@sanity/image-url'
+import imageUrlBuilder from "@sanity/image-url";
+import { PortableText } from "@portabletext/react";
 
 import moment from "moment";
 export default function SinglePost({ post }) {
@@ -21,17 +22,33 @@ export default function SinglePost({ post }) {
     description,
     topics,
     rescources,
-    sourcecode
-    
+    sourcecode,
+    body = [],
   } = post;
   const router = useRouter();
   // const { slug } = router.query;
   // alert(JSON.stringify(post.imageUrl))
 
-  const builder = imageUrlBuilder(client)
+  const builder = imageUrlBuilder(client);
   function urlFor(source) {
-    return builder.image(source)
+    return builder.image(source);
   }
+  const ptComponents = {
+    types: {
+      image: ({ value }) => {
+        if (!value?.asset?._ref) {
+          return null;
+        }
+        return (
+          <img
+            alt={value.alt || " "}
+            loading="lazy"
+            src={urlFor(value).width(320).height(240).fit("max").auto("format")}
+          />
+        );
+      },
+    },
+  };
   return (
     <div>
       <Head>
@@ -51,7 +68,9 @@ export default function SinglePost({ post }) {
                 WANUJA RANASINGHE
               </span>{" "}
               <br />
-              <span className={Styles.postdate}>Posted on  {moment({ publishedAt }).format("MMMM Do YYYY")}{" "}</span>
+              <span className={Styles.postdate}>
+                Posted on {moment({ publishedAt }).format("MMMM Do YYYY")}{" "}
+              </span>
             </p>
 
             <div className={Styles.headingdivider}></div>
@@ -76,12 +95,13 @@ export default function SinglePost({ post }) {
                 </div>
 
                 <div>
-                {/* mapped */}
+                  {/* mapped */}
                   <p className={Styles.subheading}>TOPICS</p>
                   {topics && (
-                    <ul className={Styles.subcontentlist}
-                    style={{ color: "#555" }}>
-                     
+                    <ul
+                      className={Styles.subcontentlist}
+                      style={{ color: "#555" }}
+                    >
                       {topics.map((topics) => (
                         <li key={topics}>{topics}</li>
                       ))}
@@ -95,11 +115,14 @@ export default function SinglePost({ post }) {
                   <p className={Styles.subheading}>RESOURCES &amp; LINKS</p>
 
                   {rescources && (
-                    <ul className={Styles.subcontentlist}
-                    style={{ color: "#555" }}>
-                     
+                    <ul
+                      className={Styles.subcontentlist}
+                      style={{ color: "#555" }}
+                    >
                       {rescources.map((rescources) => (
-                        <li key={rescources}><a href={rescources}>{rescources}</a> </li>
+                        <li key={rescources}>
+                          <a href={rescources}>{rescources}</a>{" "}
+                        </li>
                       ))}
                     </ul>
                   )}
@@ -116,7 +139,9 @@ export default function SinglePost({ post }) {
                 </div>
               </div>
             </div>
-            <div className={Styles.postcontent}>Post body</div>
+            <div className={Styles.postcontent}>
+              <PortableText value={body} components={ptComponents} />
+            </div>
             <div className={Styles.aboutauthor}>
               <AuthorDetails />
             </div>
@@ -176,7 +201,8 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "topics": topics[],
   "rescources": rescources[],
   sourcecode,
-  publishedAt
+  publishedAt,
+  body
   
 }`;
 
