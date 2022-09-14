@@ -19,7 +19,7 @@ export default function Home() {
       <main className={`${Styles.main} commonpagestyles`}>
         <div className={Styles.uppercontent}>
           <div
-            className={`${Styles.content}  animate__animated animate__zoomIn `}
+            className={Styles.content}
           >
             <p className={`${Styles.welcome} gradientcolor`}>
               Welcome to Programmingster.
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className={`${Styles.homeimage}  animate__animated animate__zoomIn `}
+            className={Styles.homeimage}
           >
             <Image
               src={HomeImage}

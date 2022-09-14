@@ -23,7 +23,6 @@ export default function SinglePost({ post }) {
     sourcecode,
     body = [],
   } = post;
-  // console.log(JSON.stringify(post));
 
   const builder = imageUrlBuilder(client);
   function urlFor(source) {
