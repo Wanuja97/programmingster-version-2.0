@@ -95,7 +95,7 @@ export default function SinglePost({ post }) {
                 <div>
                   {/* mapped */}
                   <p className={Styles.subheading}>TOPICS</p>
-                  {topics && (
+                  {topics.length > 0 && (
                     <ul
                       className={Styles.subcontentlist}
                       style={{ color: "#555" }}
@@ -112,7 +112,7 @@ export default function SinglePost({ post }) {
                   {/* mapped */}
                   <p className={Styles.subheading}>RESOURCES &amp; LINKS</p>
 
-                  {rescources && (
+                  {rescources.length > 0 && (
                     <ul
                       className={Styles.subcontentlist}
                       style={{ color: "#555" }}

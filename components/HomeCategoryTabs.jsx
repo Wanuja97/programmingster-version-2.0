@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
-import Styles from "../styles/HomeCategoryTabs.module.scss";
-import Link from "next/link";
-import client from "./../client";
-import groq from "groq";
-export default function HomeCategoryTabs({ posts }) {
+import TabStyles from "../styles/HomeCategoryTabs.module.scss";
+
+export default function HomeCategoryTabs({  }) {
+  
   const [key, setKey] = useState("all");
-  console.log(JSON.stringify(posts));
-  return (
+  console.log(JSON.stringify());eturn (
     <div>
       <Tabs
         id="controlled-tab-example"
@@ -18,7 +16,7 @@ export default function HomeCategoryTabs({ posts }) {
         className="mb-3"
       >
         <Tab eventKey="all" title="All Posts">
-          <div className={Styles.cardgroup}>
+          <div className={TabStyles.cardgroup}>
             {/* {posts.length > 0 &&
               posts.map(
                 ({ _id, title = "", slug = "", publishedAt = "" }) =>
@@ -31,7 +29,7 @@ export default function HomeCategoryTabs({ posts }) {
                     </li>
                   )
               )} */}
-            <Card className={Styles.card}>
+            <Card className={TabStyles.card}>
               <Card.Img variant="top" src="/image.jpg" alt="test" />
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
@@ -48,8 +46,8 @@ export default function HomeCategoryTabs({ posts }) {
           </div>
         </Tab>
         <Tab eventKey="htmlcss" title="HTML &amp; CSS">
-          <div className={Styles.cardgroup}>
-            <Card className={Styles.card}>
+          <div className={TabStyles.cardgroup}>
+            <Card className={TabStyles.card}>
               <Card.Img variant="top" src="/image.jpg" alt="test" />
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
@@ -79,13 +77,3 @@ export default function HomeCategoryTabs({ posts }) {
   );
 }
 
-export async function getStaticProps() {
-  const posts = await client.fetch(groq`
-    *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
-  `)
-  return {
-    props: {
-      posts
-    }
-  }
-}
