@@ -1,11 +1,14 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
 import Styles from "../styles/HomeCategoryTabs.module.scss";
-import client from './../client'
-export default function HomeCategoryTabs() {
- const [key, setKey] = useState('all');
+import Link from "next/link";
+import client from "./../client";
+import groq from "groq";
+export default function HomeCategoryTabs({ posts }) {
+  const [key, setKey] = useState("all");
+  console.log(JSON.stringify(posts));
   return (
     <div>
       <Tabs
@@ -15,10 +18,21 @@ export default function HomeCategoryTabs() {
         className="mb-3"
       >
         <Tab eventKey="all" title="All Posts">
-          
-            <div className={Styles.cardgroup}>
-            <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" alt="test"/>
+          <div className={Styles.cardgroup}>
+            {/* {posts.length > 0 &&
+              posts.map(
+                ({ _id, title = "", slug = "", publishedAt = "" }) =>
+                  slug && (
+                    <li key={_id}>
+                      <Link href="/post/[slug]" as={`/post/${slug.current}`}>
+                        <a>{title}</a>
+                      </Link>{" "}
+                      ({new Date(publishedAt).toDateString()})
+                    </li>
+                  )
+              )} */}
+            <Card className={Styles.card}>
+              <Card.Img variant="top" src="/image.jpg" alt="test" />
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
@@ -31,66 +45,12 @@ export default function HomeCategoryTabs() {
                 <small className="text-muted">Last updated 3 mins ago</small>
               </Card.Footer>
             </Card>
-            <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" alt="test"/>
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This card has supporting text below as a natural lead-in to
-                  additional content.{" "}
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" alt="test"/>
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" alt="test"/>
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This card has supporting text below as a natural lead-in to
-                  additional content.{" "}
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" alt="test"/>
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This card has supporting text below as a natural lead-in to
-                  additional content.{" "}
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            </div>
-        
+          </div>
         </Tab>
         <Tab eventKey="htmlcss" title="HTML &amp; CSS">
-        <div className={Styles.cardgroup}>
-        <Card className={Styles.card} >
-              <Card.Img variant="top" src="/image.jpg" alt="test"/>
+          <div className={Styles.cardgroup}>
+            <Card className={Styles.card}>
+              <Card.Img variant="top" src="/image.jpg" alt="test" />
               <Card.Body>
                 <Card.Title>Card title</Card.Title>
                 <Card.Text>
@@ -103,7 +63,7 @@ export default function HomeCategoryTabs() {
                 <small className="text-muted">Last updated 3 mins ago</small>
               </Card.Footer>
             </Card>
-        </div>
+          </div>
         </Tab>
         <Tab eventKey="reactjs" title="ReactJS">
           ReactJS
@@ -117,4 +77,15 @@ export default function HomeCategoryTabs() {
       </Tabs>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const posts = await client.fetch(groq`
+    *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
+  `)
+  return {
+    props: {
+      posts
+    }
+  }
 }
