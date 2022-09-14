@@ -5,7 +5,6 @@ import Link from "next/link";
 import Card from "react-bootstrap/Card";
 import Styles from "../../styles/SinglePost.module.scss";
 import DisqusCommentBox from "../../components/DisqusCommentBox";
-import { useRouter } from "next/router";
 import AuthorDetails from "../../components/AuthorDetails";
 
 import client from "../../client";
@@ -16,7 +15,6 @@ import { PortableText } from "@portabletext/react";
 import moment from "moment";
 export default function SinglePost({ post }) {
   const {
-    title,
     imageUrl,
     publishedAt,
     description,
@@ -25,9 +23,7 @@ export default function SinglePost({ post }) {
     sourcecode,
     body = [],
   } = post;
-  const router = useRouter();
-  // const { slug } = router.query;
-  // alert(JSON.stringify(post.imageUrl))
+  // console.log(JSON.stringify(post));
 
   const builder = imageUrlBuilder(client);
   function urlFor(source) {
@@ -41,7 +37,7 @@ export default function SinglePost({ post }) {
         }
         return (
           <img
-            alt={value.alt || " "}
+            alt={value.alt || "Programmingster"}
             loading="lazy"
             src={urlFor(value).width(320).height(240).fit("max").auto("format")}
           />
@@ -49,7 +45,9 @@ export default function SinglePost({ post }) {
       },
     },
   };
+  
   return (
+    
     <div>
       <Head>
         {/* <title>{slug}</title> */}
@@ -59,9 +57,10 @@ export default function SinglePost({ post }) {
         />
       </Head>
       <main className="commonpagestyles">
+        
         <div className={Styles.singlepostcontainer}>
           <div className={Styles.heading}>
-            <h1>{title}</h1>
+            <h1>{post.title}</h1>
             <p>
               BY{" "}
               <span className={Styles.headingauthorname}>
@@ -81,7 +80,7 @@ export default function SinglePost({ post }) {
                 <Image
                   src={urlFor(imageUrl).url()}
                   layout="fill"
-                  // alt={slug}
+                  alt={post.title}
                   priority={true}
                 />
               </div>
@@ -194,15 +193,14 @@ export default function SinglePost({ post }) {
 }
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
-  title,
+  "title": title,
   "imageUrl": mainImage.asset->url,
   description,
-  "name": author->name,
   "topics": topics[],
   "rescources": rescources[],
-  sourcecode,
-  publishedAt,
-  body
+  "sourcecode": sourcecode,
+  "publishedAt": publishedAt,
+  body,
   
 }`;
 
@@ -213,7 +211,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -223,7 +221,7 @@ export async function getStaticProps(context) {
   const post = await client.fetch(query, { slug });
   return {
     props: {
-      post,
+      post
     },
   };
 }
