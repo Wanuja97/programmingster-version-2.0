@@ -44,7 +44,7 @@ export default {
     },
     {
       name: 'rescources',
-      title: 'Rescources & Links',
+      title: 'Rescources',
       type: 'array',
       of:[{type: 'string'}],
     },

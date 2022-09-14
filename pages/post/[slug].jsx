@@ -8,11 +8,30 @@ import DisqusCommentBox from "../../components/DisqusCommentBox";
 import { useRouter } from "next/router";
 import AuthorDetails from "../../components/AuthorDetails";
 
-import client from '../../client'
-export default function SinglePost({post}) {
+import client from "../../client";
+import groq from "groq";
+import imageUrlBuilder from '@sanity/image-url'
+
+import moment from "moment";
+export default function SinglePost({ post }) {
+  const {
+    title,
+    imageUrl,
+    publishedAt,
+    description,
+    topics,
+    rescources,
+    sourcecode
+    
+  } = post;
   const router = useRouter();
   // const { slug } = router.query;
-  // alert(JSON.stringify(post))
+  // alert(JSON.stringify(post.imageUrl))
+
+  const builder = imageUrlBuilder(client)
+  function urlFor(source) {
+    return builder.image(source)
+  }
   return (
     <div>
       <Head>
@@ -25,74 +44,73 @@ export default function SinglePost({post}) {
       <main className="commonpagestyles">
         <div className={Styles.singlepostcontainer}>
           <div className={Styles.heading}>
-            <h1>{post?.slug?.current}</h1>
+            <h1>{title}</h1>
             <p>
               BY{" "}
               <span className={Styles.headingauthorname}>
                 WANUJA RANASINGHE
-              </span> <br />
-              <span className={Styles.postdate}>
-              Posted on 10 JUNE 2022
-              </span>
+              </span>{" "}
+              <br />
+              <span className={Styles.postdate}>Posted on  {moment({ publishedAt }).format("MMMM Do YYYY")}{" "}</span>
             </p>
-            
+
             <div className={Styles.headingdivider}></div>
           </div>
           <div className={Styles.content}>
             <div className={Styles.uppercontent}>
               <div className={Styles.coverimage}>
                 <Image
-                  src="/image.jpg"
+                  src={urlFor(imageUrl).url()}
                   layout="fill"
                   // alt={slug}
                   priority={true}
                 />
               </div>
               <div className={Styles.postmetadata}>
+                {/* mapped */}
                 <div>
                   <p className={Styles.subheading}>OVERVIEW</p>
-                  <p className={Styles.subcontent}>This is OVERVIEW</p>
-                  <p className={Styles.subcontent}>Overview</p>
+                  <p className={Styles.subcontent}>{description}</p>
+
                   <div className={Styles.subcontentdivider}></div>
                 </div>
 
                 <div>
+                {/* mapped */}
                   <p className={Styles.subheading}>TOPICS</p>
-
-                  <ul
-                    className={Styles.subcontentlist}
-                    style={{ color: "#555" }}
-                  >
-                    <li>ReactJS</li>
-                    <li>AOS</li>
-                    <li>Scrolling Animations</li>
-                    <li>npm</li>
-                  </ul>
+                  {topics && (
+                    <ul className={Styles.subcontentlist}
+                    style={{ color: "#555" }}>
+                     
+                      {topics.map((topics) => (
+                        <li key={topics}>{topics}</li>
+                      ))}
+                    </ul>
+                  )}
 
                   <div className={Styles.subcontentdivider}></div>
                 </div>
                 <div>
+                  {/* mapped */}
                   <p className={Styles.subheading}>RESOURCES &amp; LINKS</p>
 
-                  <ul className={Styles.subcontentlist}>
-                    <li>
-                      <a href="">https://michalsnik.github.io/aos/</a>
-                    </li>
-                    <li>
-                      <a href="">
-                        https://nextjs.org/docs/api-reference/next/image
-                      </a>
-                    </li>
-                  </ul>
+                  {rescources && (
+                    <ul className={Styles.subcontentlist}
+                    style={{ color: "#555" }}>
+                     
+                      {rescources.map((rescources) => (
+                        <li key={rescources}><a href={rescources}>{rescources}</a> </li>
+                      ))}
+                    </ul>
+                  )}
 
                   <div className={Styles.subcontentdivider}></div>
                 </div>
                 <div>
+                  {/* mapped */}
                   <p className={Styles.subheading}>GITHUB SOURCE CODE</p>
                   <p>
-                    <a href="">
-                      https://github.com/Wanuja97/azure-blob-storage-integration-nestjs
-                    </a>
+                    <a href={sourcecode}>{sourcecode}</a>
                   </p>
                   <div className={Styles.subcontentdivider}></div>
                 </div>
@@ -131,7 +149,7 @@ export default function SinglePost({post}) {
                       />
                     </div>
                     <div className={Styles.rpostcontentbody}>
-                       is a developer, lifelong learner, and a passionate person
+                      is a developer, lifelong learner, and a passionate person
                       who is always willing to learn and explore technologiess.
                       He currently reading B.Sc.(Hons.) degree in Information
                       Technology at university of Moratuwa, Sri Lanka.
@@ -150,26 +168,36 @@ export default function SinglePost({post}) {
   );
 }
 
+const query = groq`*[_type == "post" && slug.current == $slug][0]{
+  title,
+  "imageUrl": mainImage.asset->url,
+  description,
+  "name": author->name,
+  "topics": topics[],
+  "rescources": rescources[],
+  sourcecode,
+  publishedAt
+  
+}`;
+
 export async function getStaticPaths() {
   const paths = await client.fetch(
     `*[_type == "post" && defined(slug.current)][].slug.current`
-  )
+  );
 
   return {
-    paths: paths.map((slug) => ({params: {slug}})),
+    paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,
-  }
+  };
 }
 
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = "" } = context.params
-  const post = await client.fetch(`
-    *[_type == "post" && slug.current == $slug][0]
-  `, { slug })
+  const { slug = "" } = context.params;
+  const post = await client.fetch(query, { slug });
   return {
     props: {
-      post
-    }
-  }
+      post,
+    },
+  };
 }

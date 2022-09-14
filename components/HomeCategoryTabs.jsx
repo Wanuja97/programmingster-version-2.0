@@ -3,6 +3,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
 import Styles from "../styles/HomeCategoryTabs.module.scss";
+import client from './../client'
 export default function HomeCategoryTabs() {
  const [key, setKey] = useState('all');
   return (
