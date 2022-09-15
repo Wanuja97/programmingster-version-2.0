@@ -4,19 +4,16 @@ import Image from "next/image";
 import HomeImage from "../public/homeimage-min.png";
 import Styles from "../styles/HomePage.module.scss";
 import Button from "react-bootstrap/Button";
-// import HomeCategoryTabs from "../components/HomeCategoryTabs";
 import TabStyles from "../styles/HomeCategoryTabs.module.scss";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
-import Link from "next/link";
 import groq from "groq";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import moment from "moment";
 export default function Home({ posts }) {
   const [key, setKey] = useState("all");
-  // console.log(JSON.stringify(posts));
   function urlFor(source) {
     return imageUrlBuilder(client).image(source);
   }
@@ -128,9 +125,6 @@ export default function Home({ posts }) {
               <Tab eventKey="reactjs" title="ReactJS">
                 ReactJS
               </Tab>
-              {/* <Tab eventKey="backend" title="Backend Technologies">
-          Backend
-        </Tab> */}
               <Tab eventKey="other" title="Other">
                 ReactJS
               </Tab>
