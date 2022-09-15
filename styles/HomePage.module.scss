@@ -46,9 +46,11 @@
     
 }
 .btncontainer{
+    z-index: 99999;
     margin: 10px 0px;
 }
 .startbtn{
+    
     border: none;
     outline: none;
     background-color: #2EE48D;
