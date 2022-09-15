@@ -182,6 +182,90 @@
     }
 
 }
+@media screen and (min-width:576px) and (max-width: 992px) {
+    .uppercontent{
+        display: flex;
+        flex-direction: column !important;
+        min-width: 100%;
+        .coverimage{
+            width:100%;
+            min-width: 100%;
+            height: 40vh;
+            max-height: 55vh !important;
+            
+        }
+        .postmetadata{
+            // background: #2EE48D;
+            width: 100% ;
+            min-width: 100%;
+            overflow-y: hidden;
+            height: auto !important;
+            padding: 0px !important;
+            font-size: 16px;
+            .subheading{
+                margin-top: 5px;
+                color: #777;
+                font-weight: 600;
+            }
+        }
+       
+    }
+     .postcontent{
+            margin: 0px !important;
+            padding: 30px 0px 0px 0px !important;
+            font-size: 18px;
+            line-height: 28px;
+            // font-size: 16px;
+            font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+        }
+        .aboutauthor{
+            width: 100% !important;
+            display: flex;
+            padding: 0px;
+            margin: 0px;
+            // flex-direction: column;
+            // // align-items: center;
+            // // justify-content: center;
+            // margin-bottom: 20px;
+            // padding: 0px;
+            
+        }
+        .recommendpost{
+            width: 100%;
+            margin-top: 20px;
+
+            .headingr{
+                font-size: 18px;
+            }
+            .date{
+                color: #777;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            .topic{
+                font-size: 18px;
+                font-weight: 600;
+            }
+            .rpostcontent{
+                
+                flex-direction: column;
+                width: 100%;
+
+                .rpostimage{
+                    
+                    width: 100%;
+                    height: 18vh;
+                    margin: 10px 0px;
+                    
+                }
+            }
+            .rpostcontentbody{
+                margin-left: 0px;
+                font-size: 12px;
+            }
+        }
+}
+
 
 @media screen and (max-width: 576px) {
     .singlepostcontainer{
