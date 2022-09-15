@@ -163,7 +163,7 @@ export default function SinglePost({ post }) {
             <div className={Styles.commentsection}>
               <DisqusCommentBox />
             </div>
-            <div className={Styles.recommendpost}>
+            {/* <div className={Styles.recommendpost}>
               <p className={Styles.headingr}>Related Articles</p>
               <Card>
                 <Card.Body>
@@ -171,7 +171,7 @@ export default function SinglePost({ post }) {
                     <span className={Styles.date}>May 21,2022</span>
                   </div>
                   {/* SSR check */}
-                  <div>
+                  {/* <div>
                     <span className={Styles.topic}>
                       <Link href="/">
                         <a>Manage Azure Blob Storage Using NestJS</a>
@@ -181,7 +181,7 @@ export default function SinglePost({ post }) {
                   <div className={Styles.rpostcontent}>
                     <div className={Styles.rpostimage}>
                       <Image
-                        src="/image.jpg"
+                        src="/sample.jpg"
                         layout="fill"
                         priority={true}
                         objectFit="contain"
@@ -189,18 +189,15 @@ export default function SinglePost({ post }) {
                       />
                     </div>
                     <div className={Styles.rpostcontentbody}>
-                      is a developer, lifelong learner, and a passionate person
-                      who is always willing to learn and explore technologiess.
-                      He currently reading B.Sc.(Hons.) degree in Information
-                      Technology at university of Moratuwa, Sri Lanka.
+                     sample body
                       <div>
                         <a href="">Read More</a>
                       </div>
                     </div>
-                  </div>
-                </Card.Body>
+                  </div> */}
+                {/* </Card.Body>
               </Card>
-            </div>
+            </div> */} 
           </div>
         </div>
       </main>
