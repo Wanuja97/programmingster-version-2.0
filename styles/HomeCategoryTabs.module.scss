@@ -24,7 +24,12 @@
     }
 }
 @media screen and (max-width: 992px){
-    
+    .card{
+       
+        // border: 2px solid #555 0.5 !important;
+        margin-bottom: 40px !important;
+       
+    }
 }
 @media screen and (max-width: 576px) {
     .cardgroup{
