@@ -5,9 +5,25 @@ export default function About() {
   return (
     <div>
         <Head>
-        <title>About</title>
+        <title>About - Programmingster</title>
         <meta name="description" content="Welcome to programmingster.Sharing the knowledge is the best thing to learn" />
-        
+        <meta name="title" content="About - Programmingster"/>
+         {/* Open Graph / Facebook  */}
+         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://programmingster.com/about/" />
+        <meta property="og:title" content="About - Programmingster" />
+        <meta
+          property="og:description"
+          content="Welcome to Programmingster. Sharing knowledge is the best thing to learn."
+        />
+        {/* Twitter  */}
+        <meta property="twitter:url" content="https://programmingster.com/about" />
+        <meta property="twitter:title" content="About - Programmingster" />
+        <meta
+          property="twitter:description"
+          content="Welcome to Programmingster. Sharing knowledge is the best thing to learn."
+        />
+        <link rel="canonical" href="https://programmingster.com/about/" />
       </Head>
       <main className='commonpagestyles'>
       <div className={Styles.aboutcontainer}>

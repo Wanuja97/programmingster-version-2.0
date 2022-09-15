@@ -3,41 +3,25 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="title" content="Programmingster" />
-        <meta
-          name="description"
-          content="Welcome to Programmingster. Sharing knowledge is the best thing to learn."
-        />
         <meta
           name="keywords"
           content="HTML, Python, SQL, JavaScript, How to, PHP, Java, Bootstrap, CSS, MySQL, Software Engineering methods, React, Angular, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Flutter, Learning, Lessons, Source code, Demos, Tips, NextJS, NestJS, Blog, Tech Blog"
         />
+        
         <meta name="robots" content="index, follow" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
         <meta name="author" content="Wanuja Ranasinghe" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#2EE48D" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
         {/* Open Graph / Facebook  */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://programmingster.com/" />
-        <meta property="og:title" content="Programmingster" />
-        <meta
-          property="og:description"
-          content="Welcome to Programmingster. Sharing knowledge is the best thing to learn."
-        />
+        
         <meta property="og:image" content="/favicon-400x400.png" />
 
         {/* Twitter  */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://programmingster.com" />
-        <meta property="twitter:title" content="Programmingster" />
-        <meta
-          property="twitter:description"
-          content="Welcome to Programmingster. Sharing knowledge is the best thing to learn."
-        />
         <meta property="twitter:image" content="/favicon-400x400.png" />
 
         {/* Google Fonts */}

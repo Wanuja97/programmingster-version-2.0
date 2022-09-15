@@ -20,6 +20,7 @@ export default function Footer() {
             alt="programmingster logo"
             width="384"
             height="126"
+            priority={true}
           />
         </div>
         <div className={Styles.footernavigation}>

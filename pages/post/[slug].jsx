@@ -49,11 +49,28 @@ export default function SinglePost({ post }) {
     
     <div>
       <Head>
-        {/* <title>{slug}</title> */}
+        <title>{post.title}</title>
+        <meta name="title" content={`${post.title} - Programmingster`} />
         <meta
           name="description"
-          content="Welcome to programmingster.Sharing the knowledge is the best thing to learn"
+          content={post.description}
         />
+        {/* Open Graph / Facebook  */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://programmingster.com/post/${post.slug}`} />
+        <meta property="og:title" content={`${post.title} - Programmingster`} />
+        <meta
+          property="og:description"
+          content={post.description}
+        />
+        {/* Twitter  */}
+        <meta property="twitter:url" content={`https://programmingster.com/post/${post.slug}`} />
+        <meta property="twitter:title" content={`${post.title} - Programmingster`} />
+        <meta
+          property="twitter:description"
+          content={post.description}
+        />
+        <link rel="canonical" href={`https://programmingster.com/post/${post.slug}`} />
       </Head>
       <main className="commonpagestyles">
         
@@ -200,7 +217,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "sourcecode": sourcecode,
   "publishedAt": publishedAt,
   body,
-  
+  "slug":slug.current
 }`;
 
 export async function getStaticPaths() {

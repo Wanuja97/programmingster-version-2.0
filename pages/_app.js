@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function MyApp({ Component, pageProps }) {
   return (
     <SSRProvider>
+      <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      </Head>
       <MainLayout>
       <Script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></Script>
     <Script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></Script>

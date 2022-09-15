@@ -31,6 +31,7 @@ export default function TopNavbar() {
               alt="programmingster logo"
               width="275"
               height="51"
+              priority={true}
             />
           </div>
           </a>
