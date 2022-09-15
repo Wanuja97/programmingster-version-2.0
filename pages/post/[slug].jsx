@@ -35,11 +35,15 @@ export default function SinglePost({ post }) {
           return null;
         }
         return (
-          <img
+         <div style={{textAlign:"center"}}>
+            
+           <img
             alt={value.alt || "Programmingster"}
             loading="lazy"
             src={urlFor(value).width(320).height(240).fit("max").auto("format")}
           />
+          <p style={{fontSize:"14px",color:"#555",fontFamily:"Ubuntu",fontWeight:"500"}}>{value.alt}</p>
+         </div>
         );
       },
     },
