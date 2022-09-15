@@ -5,11 +5,28 @@ export default function PrivacyPolicy() {
   return (
     <div>
       <Head>
-        <title>Privacy Policy</title>
+        <title>Privacy Policy - Programmingster</title>
         <meta
           name="description"
           content="Welcome to programmingster.Sharing the knowledge is the best thing to learn"
         />
+        <meta name="title" content="Privacy Policy - Programmingster"/>
+         {/* Open Graph / Facebook  */}
+         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://programmingster.com/privacypolicy" />
+        <meta property="og:title" content="Privacy Policy - Programmingster" />
+        <meta
+          property="og:description"
+          content="Welcome to Programmingster. Sharing knowledge is the best thing to learn."
+        />
+        {/* Twitter  */}
+        <meta property="twitter:url" content="https://programmingster.com/privacypolicy" />
+        <meta property="twitter:title" content="Privacy Policy - Programmingster" />
+        <meta
+          property="twitter:description"
+          content="Welcome to Programmingster. Sharing knowledge is the best thing to learn."
+        />
+        <link rel="canonical" href="https://programmingster.com/privacypolicy/" />
       </Head>
       <main className="commonpagestyles">
         <div className={Styles.privacypolicycontainer}>

@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Styles from "../styles/Navbar.module.scss";
 import Image from "next/image";
 export default function TopNavbar() {
+  const router = useRouter();
+  const activeTab = (path) => {
+    if (router.asPath === path) {
+      return { color: "#2EE48D" };
+    }
+  };
   return (
     <div>
       <Navbar
@@ -18,7 +23,7 @@ export default function TopNavbar() {
       >
         <Container >
         
-        <Link href="/">
+        <Link href="/" >
           <a>
           <div className="logocontainer">
             <Image
@@ -26,6 +31,7 @@ export default function TopNavbar() {
               alt="programmingster logo"
               width="275"
               height="51"
+              priority={true}
             />
           </div>
           </a>
@@ -35,23 +41,28 @@ export default function TopNavbar() {
           <Navbar.Collapse id="responsive-navbar-nav" className={Styles.navitemscontainer}>
             <Nav >
               <Nav.Item className={Styles.navitem}>
-                <Link href="/">
-                  <a>Home </a>
+                <Link href="/" >
+                  <a style={activeTab("/")}>Home </a>
+                </Link>
+              </Nav.Item>
+              <Nav.Item className={Styles.navitem}>
+                <Link href="/#categories">
+                  <a style={activeTab("/#categories")}>Categories </a>
                 </Link>
               </Nav.Item>
               <Nav.Item className={Styles.navitem}>
                 <Link href="/about">
-                  <a>About </a>
+                  <a style={activeTab("/about")}>About </a>
                 </Link>
               </Nav.Item>
               <Nav.Item className={Styles.navitem}>
                 <Link href="/contact">
-                  <a>Contact</a>
+                  <a style={activeTab("/contact")}>Contact</a>
                 </Link>
               </Nav.Item>
               <Nav.Item className={Styles.navitem}>
                 <Link href="/privacypolicy" >
-                  <a >Privacy Policy </a>
+                  <a style={activeTab("/privacypolicy")}>Privacy Policy </a>
                 </Link>
               </Nav.Item>
             </Nav>

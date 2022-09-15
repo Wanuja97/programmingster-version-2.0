@@ -33,7 +33,7 @@ export default function AuthorDetails() {
               is a developer, lifelong learner, and a passionate person who is
               always willing to learn and explore technologiess. He currently
               reading B.Sc.(Hons.) degree in Information Technology at
-              university of Moratuwa, Sri Lanka.
+              University of Moratuwa, Sri Lanka.
             </p>
           </div>
         </Card.Body>

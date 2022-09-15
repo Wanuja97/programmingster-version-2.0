@@ -1,9 +1,16 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import Styles from "../styles/Footer.module.scss";
 export default function Footer() {
   const year = new Date().getFullYear();
+  const router = useRouter();
+  const activeTab = (path) => {
+    if (router.asPath === path) {
+      return { color: "#2EE48D" };
+    }
+  };
   return (
     <div className={Styles.footercontainer}>
       <div className={Styles.footerbody}>
@@ -13,6 +20,7 @@ export default function Footer() {
             alt="programmingster logo"
             width="384"
             height="126"
+            priority={true}
           />
         </div>
         <div className={Styles.footernavigation}>
@@ -20,22 +28,27 @@ export default function Footer() {
           <ul>
             <li>
               <Link href="/">
-                <a>Home </a>
+                <a style={activeTab("/")}>Home </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/#categories">
+                <a style={activeTab("/#categories")}>Categories </a>
               </Link>
             </li>
             <li>
               <Link href="/about">
-                <a>About </a>
+                <a style={activeTab("/about")}>About </a>
               </Link>
             </li>
             <li>
               <Link href="/contact">
-                <a>Contact </a>
+                <a style={activeTab("/contact")}>Contact </a>
               </Link>
             </li>
             <li>
               <Link href="/privacypolicy">
-                <a>Privacy Policy </a>
+                <a style={activeTab("/privacypolicy")}>Privacy Policy </a>
               </Link>
             </li>
           </ul>

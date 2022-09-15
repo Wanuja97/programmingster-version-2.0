@@ -9,7 +9,7 @@
     display: flex;
     height: 100vh;
     width:100%;
-    background: linear-gradient(104.06deg, #0E314A 0.3%, #071B29 23.15%, #092031 49.11%, #092031 73%, #0E334F 100%);
+    background: linear-gradient(134.06deg, #0E314A 0.3%, #071B29 23.15%, #092031 49.11%, #092031 73%, #0E334F 100%);
 
     }
    
@@ -46,9 +46,11 @@
     
 }
 .btncontainer{
+    z-index: 1;
     margin: 10px 0px;
 }
 .startbtn{
+    
     border: none;
     outline: none;
     background-color: #2EE48D;
@@ -101,6 +103,7 @@
         margin: 20px;
         width: 90%;
     }
+   
     
 }
 

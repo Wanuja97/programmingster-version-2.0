@@ -5,7 +5,7 @@
     align-items: center;
     background: #fff;
     padding-top: 40px;
-    color: #000;
+    // color: #000;
     font-family: 'Ubuntu';
     margin: 0;
 }
@@ -23,6 +23,11 @@
     .headingauthorname{
         color: #6298E9;
     }
+    .postdate{
+        color: #777;
+        font-style: italic;
+        font-weight: 400;
+    }
     .headingdivider{
         width: 100%;
         height: 4px;
@@ -38,10 +43,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    h2{
-        color: #2EE48D;
-        
-    }
+    
 
     .uppercontent{
         display: flex;
@@ -53,7 +55,7 @@
             height: 60vh;
             max-height: 60vh !important;
             overflow: hidden;
-            border: 5px #2EE48D solid;
+            // border: 5px #2EE48D solid;
             
         }
 
@@ -71,7 +73,8 @@
             .subcontent{
                 font-size: 14px;
                 text-align: justify;
-                color: #555;
+                // color: #555;
+                font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
             }
             
             .subcontentlist{
@@ -102,11 +105,23 @@
             
         }
     }
+    
     .postcontent{
+        width: 100%;
         padding: 60px;
         text-align: justify;
-        color: #555;
-        // font-size: 16px;
+        font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+        letter-spacing: -0.003em;
+        color: rgba(41, 41, 41, 1) !important;
+        line-height: 32px;
+        font-weight: 400;
+        overflow-wrap: break-word;
+        font-size: 1.25rem;
+        img{
+            max-width: 100% ;
+            height: auto;
+            object-fit: contain;
+        }
     }
     .aboutauthor{
         width: 70%;
@@ -167,6 +182,90 @@
     }
 
 }
+@media screen and (min-width:576px) and (max-width: 992px) {
+    .uppercontent{
+        display: flex;
+        flex-direction: column !important;
+        min-width: 100%;
+        .coverimage{
+            width:100%;
+            min-width: 100%;
+            height: 40vh;
+            max-height: 55vh !important;
+            
+        }
+        .postmetadata{
+            // background: #2EE48D;
+            width: 100% ;
+            min-width: 100%;
+            overflow-y: hidden;
+            height: auto !important;
+            padding: 0px !important;
+            font-size: 16px;
+            .subheading{
+                margin-top: 5px;
+                color: #777;
+                font-weight: 600;
+            }
+        }
+       
+    }
+     .postcontent{
+            margin: 0px !important;
+            padding: 30px 0px 0px 0px !important;
+            font-size: 18px;
+            line-height: 28px;
+            // font-size: 16px;
+            font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+        }
+        .aboutauthor{
+            width: 100% !important;
+            display: flex;
+            padding: 0px;
+            margin: 0px;
+            // flex-direction: column;
+            // // align-items: center;
+            // // justify-content: center;
+            // margin-bottom: 20px;
+            // padding: 0px;
+            
+        }
+        .recommendpost{
+            width: 100%;
+            margin-top: 20px;
+
+            .headingr{
+                font-size: 18px;
+            }
+            .date{
+                color: #777;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            .topic{
+                font-size: 18px;
+                font-weight: 600;
+            }
+            .rpostcontent{
+                
+                flex-direction: column;
+                width: 100%;
+
+                .rpostimage{
+                    
+                    width: 100%;
+                    height: 18vh;
+                    margin: 10px 0px;
+                    
+                }
+            }
+            .rpostcontentbody{
+                margin-left: 0px;
+                font-size: 12px;
+            }
+        }
+}
+
 
 @media screen and (max-width: 576px) {
     .singlepostcontainer{
@@ -179,29 +278,32 @@
         h1{
             font-size: 1.6rem;
         }
+        p{
+            font-size: 12px;
+        }
     }
     .content{
         width: 98%;
         padding: 20px 10px;
         display: flex;
         flex-direction: column;
-        h2{
-            color: #2EE48D;
-            
-        }
+        
     
         .uppercontent{
             display: flex;
             flex-direction: column;
-    
+            min-width: 100%;
             .coverimage{
                 width:100%;
+                min-width: 100%;
                 height: 30vh;
                 max-height: 55vh !important;
+                
             }
             .postmetadata{
                 // background: #2EE48D;
                 width: 100% ;
+                min-width: 100%;
                 overflow-y: hidden;
                 height: auto;
                 padding: 5px 0px 20px 0px;
@@ -219,9 +321,12 @@
             height: auto;
         }
         .postcontent{
+            
                 padding: 0px;
-                
+                font-size: 18px;
+                line-height: 28px;
                 // font-size: 16px;
+                font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
             }
             .aboutauthor{
                 width: 100%;
