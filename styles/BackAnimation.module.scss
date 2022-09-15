@@ -66,7 +66,7 @@
         width: $circleSize + px;
         height: $circleSize + px;
   
-        $startPositionY: random(10) + 70;
+        $startPositionY: random(10) + 90;
         $framesName: "move-frames-" + $i;
         $moveDuration: 28000 + random(9000) + ms;
   
