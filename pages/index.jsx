@@ -12,6 +12,8 @@ import groq from "groq";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import moment from "moment";
+
+import Animation from "../components/Animation";
 export default function Home({ posts }) {
   const [key, setKey] = useState("all");
   function urlFor(source) {
@@ -46,8 +48,11 @@ export default function Home({ posts }) {
       </Head>
 
       <main className={`${Styles.main} commonpagestyles`}>
+      <Animation/>
         <div className={Styles.uppercontent}>
+          
           <div className={Styles.content}>
+          
             <p className={`${Styles.welcome} gradientcolor`}>
               Welcome to Programmingster.
             </p>
@@ -58,7 +63,9 @@ export default function Home({ posts }) {
               </a>
             </div>
           </div>
+          
           <div className={Styles.homeimage}>
+            
             <Image
               src={HomeImage}
               alt="Home Image"
