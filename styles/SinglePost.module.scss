@@ -55,7 +55,7 @@
             height: 60vh;
             max-height: 60vh !important;
             overflow: hidden;
-            border: 5px #2EE48D solid;
+            // border: 5px #2EE48D solid;
             
         }
 
@@ -105,6 +105,7 @@
             
         }
     }
+    
     .postcontent{
         width: 100%;
         padding: 60px;
@@ -200,15 +201,17 @@
         .uppercontent{
             display: flex;
             flex-direction: column;
-    
+            min-width: 100%;
             .coverimage{
                 width:100%;
+                min-width: 100%;
                 height: 30vh;
                 max-height: 55vh !important;
             }
             .postmetadata{
                 // background: #2EE48D;
                 width: 100% ;
+                min-width: 100%;
                 overflow-y: hidden;
                 height: auto;
                 padding: 5px 0px 20px 0px;
@@ -227,7 +230,7 @@
         }
         .postcontent{
                 padding: 0px;
-                
+                font-size: 1.15rem;
                 // font-size: 16px;
             }
             .aboutauthor{

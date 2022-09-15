@@ -73,9 +73,8 @@ export default function Home({posts}) {
             ({ _id, title = '', slug = '', publishedAt = '',description = '',mainImage= '' ,category = ''}) =>{
               
               return  slug &&(
-                
-                <Link href="/post/[slug]" as={`/post/${slug.current}`} key={_id}>
-                <Card className={TabStyles.card}>
+                <a href={`/post/${slug.current}`} key={_id}>
+                  <Card className={TabStyles.card}>
               <Card.Img variant="top" src={urlFor(mainImage).url()} alt={slug} />
               <Card.Body>
                 <Card.Title>{title}</Card.Title>
@@ -88,7 +87,8 @@ export default function Home({posts}) {
                 <small className="text-muted">Posted on {moment({ publishedAt }).format("MMMM Do YYYY")}{" "}</small>
               </Card.Footer>
             </Card>
-              </Link>
+                </a>
+                
             
               )
             }

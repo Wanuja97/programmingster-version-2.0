@@ -6,6 +6,7 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    font-size: 14px;
     .card{
         border: none;
         // border: 2px solid #555 0.5 !important;
@@ -13,9 +14,13 @@
         width: 20rem;
     }
     .card:hover{
-        transform: scale(1.05);
+        transform: scale(1.03);
         transition: all 0.5s ease;
         cursor: pointer;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(64,64,64);
     }
 }
 @media screen and (max-width: 992px){
