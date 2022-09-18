@@ -42,17 +42,17 @@ export default function TopNavbar() {
             <Nav >
               <Nav.Item className={Styles.navitem}>
                 <Link href="/" >
-                  <a style={activeTab("/")}>Home </a>
+                  <a style={activeTab("/")}>Home</a>
                 </Link>
               </Nav.Item>
               <Nav.Item className={Styles.navitem}>
                 <Link href="/#categories">
-                  <a style={activeTab("/#categories")}>Categories </a>
+                  <a style={activeTab("/#categories")}>Categories</a>
                 </Link>
               </Nav.Item>
               <Nav.Item className={Styles.navitem}>
                 <Link href="/about">
-                  <a style={activeTab("/about")}>About </a>
+                  <a style={activeTab("/about")}>About</a>
                 </Link>
               </Nav.Item>
               <Nav.Item className={Styles.navitem}>
@@ -62,7 +62,7 @@ export default function TopNavbar() {
               </Nav.Item>
               <Nav.Item className={Styles.navitem}>
                 <Link href="/privacypolicy" >
-                  <a style={activeTab("/privacypolicy")}>Privacy Policy </a>
+                  <a style={activeTab("/privacypolicy")}>Privacy Policy</a>
                 </Link>
               </Nav.Item>
             </Nav>
