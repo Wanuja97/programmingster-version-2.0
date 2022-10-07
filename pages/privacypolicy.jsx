@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Styles from "../styles/privacypolicy.module.scss";
+import Maintainenace from "../components/Maintainenace";
 export default function PrivacyPolicy() {
   return (
     <div>
@@ -29,6 +30,7 @@ export default function PrivacyPolicy() {
         <link rel="canonical" href="https://programmingster.com/privacypolicy/" />
       </Head>
       <main className="commonpagestyles">
+        <Maintainenace />
         <div className={Styles.privacypolicycontainer}>
           <div className={Styles.heading}>
             <h1 className="gradientcolor">Privacy Policy for Programmingster</h1>

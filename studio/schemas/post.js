@@ -18,6 +18,11 @@ export default {
       },
     },
     {
+      name: 'cannonicalURL',
+      title: 'Canonical URL',
+      type: 'string',
+    },
+    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',

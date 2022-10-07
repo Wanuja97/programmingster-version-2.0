@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import Styles from "../../styles/SinglePost.module.scss";
 import DisqusCommentBox from "../../components/DisqusCommentBox";
 import AuthorDetails from "../../components/AuthorDetails";
-
+import Maintainenace from "../../components/Maintainenace";
 import client from "../../client";
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
@@ -18,6 +18,7 @@ export default function SinglePost({ post }) {
     imageUrl,
     publishedAt,
     description,
+    cannonicalURL,
     topics,
     rescources,
     sourcecode,
@@ -74,10 +75,10 @@ export default function SinglePost({ post }) {
           property="twitter:description"
           content={post.description}
         />
-        <link rel="canonical" href={`https://programmingster.com/post/${post.slug}`} />
+        <link rel="canonical" href={cannonicalURL} />
       </Head>
       <main className="commonpagestyles">
-        
+        <Maintainenace/>
         <div className={Styles.singlepostcontainer}>
           <div className={Styles.heading}>
             <h1>{post.title}</h1>
@@ -213,6 +214,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "title": title,
   "imageUrl": mainImage.asset->url,
   description,
+  cannonicalURL,
   "topics": topics[],
   "rescources": rescources[],
   "sourcecode": sourcecode,
