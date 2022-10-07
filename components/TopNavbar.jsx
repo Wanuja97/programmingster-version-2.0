@@ -40,6 +40,7 @@ export default function TopNavbar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className={Styles.navitemscontainer}>
             <Nav >
+               {/* <Nav.Link href="/">Home</Nav.Link> */}
               <Nav.Item className={Styles.navitem}>
                 <Link href="/" >
                   <a style={activeTab("/")}>Home</a>

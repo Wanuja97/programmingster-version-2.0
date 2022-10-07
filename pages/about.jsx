@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Styles from '../styles/AboutPage.module.scss'
+import Maintainenace from '../components/Maintainenace'
 export default function About() {
   return (
     <div>
@@ -26,6 +27,7 @@ export default function About() {
         <link rel="canonical" href="https://programmingster.com/about/" />
       </Head>
       <main className='commonpagestyles'>
+        <Maintainenace/>
       <div className={Styles.aboutcontainer}>
           <div className={Styles.heading}>
             <h1 className="gradientcolor">About Programmingster</h1>

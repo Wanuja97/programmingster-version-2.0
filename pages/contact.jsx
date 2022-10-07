@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Maintainenace from "../components/Maintainenace";
 export default function Contact() {
   const form = useRef();
   const [name, setName] = useState("");
@@ -79,6 +80,7 @@ export default function Contact() {
         <link rel="canonical" href="https://programmingster.com/contact/" />
       </Head>
       <main className="commonpagestyles">
+        <Maintainenace/>
         <div className={Styles.contactcontainer}>
         <ToastContainer />
           <div className={Styles.heading}>

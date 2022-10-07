@@ -12,7 +12,7 @@ import groq from "groq";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import moment from "moment";
-
+import Maintainenace from "../components/Maintainenace";
 import Animation from "../components/Animation";
 export default function Home({ posts }) {
   const [key, setKey] = useState("all");
@@ -48,6 +48,7 @@ export default function Home({ posts }) {
       </Head>
 
       <main className={`${Styles.main} commonpagestyles`}>
+      <Maintainenace/>
       <Animation/>
         <div className={Styles.uppercontent}>
           
